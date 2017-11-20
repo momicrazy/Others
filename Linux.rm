@@ -1,0 +1,11 @@
+########################### Index system #############################
+/ : root
+/bin : binary execution file
+/sbin : super binary execution file (for super user)
+/etc : system setting file
+/etc/rc.d : system setting file ,launch after system start
+/home : for user file
+/mnt : mounting device
+/var : save the log file
+
+
