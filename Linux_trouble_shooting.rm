@@ -1,0 +1,14 @@
+###############################################################################################
+### If once the usb device have read/write permission problems first time plug in PC
+### show /dev/bus/usb/002/00*:Permisiion denied
+### it's because the device is belongs to root, but not user
+### use ls -al /dev/bus/usb/002 can see it's belonger
+### so change the belonger and permission to the usb device
+### check the company num/device num by using lsusb
+Bus 003 Device 002: ID 413c:2003 Dell Computer Corp. Keyboard
+### company num is 2003, device num is 413c
+sudo vim /etc/udev/rules.d/70-persistent-usb.rules
+### add 
+SYSFS{idProduct}=="2003",SYSFS{idVendor}=="413c",MODE="666",OWNER="user",GROUP="user"
+### or
+ATTR{idProduct}=="2003",ATTR{idVendor}=="413c",MODE="666",OWNER="user",GROUP="user"
