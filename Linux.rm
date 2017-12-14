@@ -9,10 +9,18 @@
 /var : save the log file
 
 
-########################### Regex #############################
-Regex = regular expression
+######################### regular expression ###########################
+- regular expression in short term is regex.
+* copy multipule or non time of alphebet before e.g. a* means: ' ','a','aa',....
+. one and only alphabet
+^ in [] means reverse, out [] means line head
+$ means line end e.g.grep -n "s$" ,will find line end with s
 
+nl is like cat with line number
+sed like grep, but can edit it immediately
 
+nl [file] |sed -n "3,5d" , delete 3-5 lines
+c ,change
 
 
 
