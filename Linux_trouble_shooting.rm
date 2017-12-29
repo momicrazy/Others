@@ -12,3 +12,7 @@ sudo vim /etc/udev/rules.d/70-persistent-usb.rules
 SYSFS{idProduct}=="2003",SYSFS{idVendor}=="413c",MODE="666",OWNER="user",GROUP="user"
 ### or
 ATTR{idProduct}=="2003",ATTR{idVendor}=="413c",MODE="666",OWNER="user",GROUP="user"
+
+
+###if just USB ower issue, add file at "etc/udev/rules.d/70-ttyUSB.rules"
+$ KERNEL=="ttyUSB*", OWNER="root", GROUP="root", MODE="0666" 
