@@ -2,7 +2,7 @@
 # example:
 using 1/3" CMOS(4.8 x 3.6 mm^2), 5mm focal length, working distance 230mm, smallest feature length (40mm/60 pixals)
 
-# FOV(field of view) = 2 * arctan(CCD size / focal length of lens)
+# FOV(field of view) = 2 * arctan(CCD size / 2 / focal length of lens)
 FOV of x direction = 2 * arctan(4.8 / 2 / 5) = 51.28
 FOV of y direction = 2 * arctan(3.6 / 2 / 5) = 39.60
 
