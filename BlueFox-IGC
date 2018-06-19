@@ -1,0 +1,4 @@
+1. triggerMode in mvCamInterface.cpp need to switch to ctmOnHighLevel
+2. apriltag_detector.cpp copyTo function may crush
+3. TagDetection.cc getRelativeTransform need to switch all parameter type to double
+4. use cv::Mat may need to empty it before use it
