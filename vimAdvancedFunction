@@ -1,0 +1,57 @@
+1)一些常用的Vim配置，在~/.vimrc中
+syntax on       支持语法高亮
+set nu          显示行号
+set nonu      不显示行号
+set ai          设置自动缩进
+set shiftwidth=4   设置自动缩进 4 个空格, 当然要设自动缩进先.
+set sts=4          即设置 softtabstop 为 4. 输入 tab 后就跳了 4 格.
+set tabstop=4      实际的 tab 即为 4 个空格, 而不是缺省的 8 个.
+set expandtab      在输入 tab 后, vim 用恰当的空格来填充这个 tab.
+:set hls 打开搜索高亮
+:set nohls 取消搜索高亮 
+
+:set list ： 显示特殊字符
+:set nolist 
+
+
+
+2)多文件编辑
+打开的两个文件上下窗口分布 ： vim -o file1 file2
+打开的两个文件左右窗口分布 ： vim -O file1 file2     
+:sp filename vim将分割出一个横向窗口, 并在该窗口中打开新文件.
+:vsp filename vim将在右边分割出一个窗口, 并在该窗口中打开新文件.
+ 
+ 
+ 
+3) 查找
+/ 表示向下查找, ? 表示向上查找.
+*[word] 表示尋找光標所在的單詞
+g*[word] 表示尋找光標所在的單詞, 但不需完全匹配
+% 表示尋找 [] / {} / () 所配對的另一半括號
+
+
+
+4) 光标移动
+w 移动光标到下一个单词. b 移动光标到上一个单词.
+0 移动光标到本行最开头. ^ 移动光标到本行最开头的字符处. $ 移动光标到本行结尾处.
+向前向后翻页 ctrl+f 和 ctrl+b. 
+
+
+
+5）替换
+单个字符替换用r，覆盖多个字符用R，用多个字符替换一个字符用s，整行替换用S.
+:s/vivian/sky/ 替换当前行第一个 vivian 为 sky
+:s/vivian/sky/g 替换当前行所有 vivian 为 sky
+:n,$s/vivian/sky/ 替换第 n 行开始到最后一行中每一行的第一个 vivian 为 sky
+:n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
+n 为数字，若 n 为 .，表示从当前行开始到最后一行
+:%s/vivian/sky/（等同于 :g/vivian/s//sky/） 替换每一行的第一个 vivian 为 sky
+:%s/vivian/sky/g（等同于 :g/vivian/s//sky/g） 替换每一行中所有 vivian 为 sky
+可以使用 # 作为分隔符，此时中间出现的 / 不会作为分隔符
+:s#vivian/#sky/# 替换当前行第一个 vivian/ 为 sky/
+:%s+/oradata/apras/+/user01/apras1+ （使用+ 来 替换 / ）： /oradata/apras/替换成/user01/apras1/
+ 
+ 
+6) 排序
+从当前行以下20行按字母顺序排序
+只要输入:.,+20!sort
